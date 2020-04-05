@@ -43,12 +43,13 @@ rmse = np.sqrt(mean_squared_error(y,ypolyPred))
 
 
 
-plt.plot(X, lin2.predict(poly.fit_transform(X)), color='red',label='Y=0.00000000e+00  1.79634449e-02X -7.85003235e-06X^2  1.27140646e-09X^3')
+plt.plot(X, lin2.predict(poly.fit_transform(X)), color='red',label=r'Y=0.00000000e+00  1.79634449e-02X -7.85003235e-06$X^2  1.27140646e-09X^3$')
 plt.title(' NCOV 2019 Polynomial Regression Analysis using 3rd Degree polynomial')
 plt.xlabel('Cases')
 plt.ylabel('Days')
 plt.legend(loc='upper left')
-
+plt.text(2000, 3, r'$R^2 = %0.2f$' % r2)
+plt.text(2000, 2, 'RMSE= %0.2f' % rmse)
 plt.show()
 print(lin2.coef_)
 print(r2)
